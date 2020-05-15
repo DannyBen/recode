@@ -1,5 +1,4 @@
-Recode
-==================================================
+# Recode - Command line refactoring utility
 
 [![Gem Version](https://badge.fury.io/rb/recode.svg)](https://badge.fury.io/rb/recode)
 [![Build Status](https://github.com/DannyBen/recode/workflows/Test/badge.svg)](https://github.com/DannyBen/recode/actions?query=workflow%3ATest)
@@ -7,18 +6,12 @@ Recode
 
 ---
 
-Command line utility for refactoring code
-
----
-
-Installation
---------------------------------------------------
+## Installation
 
     $ gem install recode
 
 
 
-Usage
---------------------------------------------------
+## Usage
 
 TODO
