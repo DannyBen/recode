@@ -1,0 +1,23 @@
+require "runfile-tasks"
+require "byebug"
+require_relative 'lib/recode'
+
+title   "Recode Developer Toolbelt"
+summary "Runfile tasks for building the Recode gem"
+version Recode::VERSION
+
+RunfileTasks::RubyGems.all 'recode'
+RunfileTasks::Testing.rspec
+
+help   "Run interactive console"
+action :console, :c do
+  run "bundle exec bin/console"
+end
+
+help   "Generate changelog"
+action :changelog do
+  run 'github_changelog_generator --project recode --user DannyBen'  
+  run "git commit -am 'update changelog' && git push"
+end
+
+require_relative 'debug.rb' if File.exist? 'debug.rb'
