@@ -1,10 +1,10 @@
-require 'diffy'
-
 module Recode
   module Diffing
     def diff(source, target)
       diffy.new "#{source}\n", "#{target}\n", context: 1
     end
+
+  private
 
     def diffy
       @diffy ||= diffy!

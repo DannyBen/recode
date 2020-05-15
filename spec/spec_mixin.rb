@@ -1,26 +1,13 @@
 require 'stringio'
 
 module SpecMixin
-  def stdin_send(*args)
-    begin
-      $stdin = StringIO.new
-      $stdin.puts(args.shift) until args.empty?
-      $stdin.rewind
-      yield
-    ensure
-      $stdin = STDIN
-    end
+  def reset_sample_dir
+    system 'rm -rf spec/tmp/sample'
+    system 'cp -r spec/fixtures/sample spec/tmp/'
   end
 
-  def supress_output
-    original_stdout = $stdout
-    $stdout = StringIO.new
-    begin
-      yield
-    ensure
-      $stdout = original_stdout
-    end
+  def in_sample_dir(&block)
+    reset_sample_dir
+    Dir.chdir 'spec/tmp/sample', &block
   end
-
-  # Put more helper methods here
 end

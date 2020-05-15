@@ -1,5 +1,3 @@
-require 'recode/handler/base'
-
 module Recode
   module Handler
     class Output < Base

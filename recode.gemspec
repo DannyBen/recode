@@ -20,5 +20,5 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'mister_bin', '~> 0.7'
   s.add_runtime_dependency 'colsole', '~> 0.7'
   s.add_runtime_dependency 'diffy', '~> 3.3'
-  s.add_runtime_dependency 'activesupport', '~> 6.0'
+  s.add_runtime_dependency 'strings-inflection', '~> 0.1'
 end

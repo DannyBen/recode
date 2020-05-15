@@ -1,5 +1,7 @@
 module Recode
   module ChangeVariations
+    using Strings::Inflection::Extensions
+
     def change_variations(old_string, new_string)
       result = []
       result << [old_string.pluralize.downcase, new_string.pluralize.downcase]

@@ -1,9 +1,8 @@
-require 'recode/diffing'
-
 module Recode
   module Handler
     class Base
       include Diffing
+      include Colsole
 
       def show_rename(source:, target:)
         say "\n!txtblu!" + ("_" * terminal_width)

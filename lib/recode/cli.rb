@@ -1,3 +1,4 @@
+require 'mister_bin'
 require 'recode'
 require 'recode/command'
 
@@ -9,5 +10,4 @@ module Recode
       router
     end
   end
-
 end

@@ -1,5 +1,4 @@
 require 'io/console'
-require 'recode/handler/output'
 
 module Recode
   module Handler
@@ -22,7 +21,7 @@ module Recode
         
         if answer == 'q' or answer == "\u0003"
           say "!txtblu!Quit"
-          raise "Abort"
+          raise Recode::Abort
         elsif answer == 'n'
           say "!txtred!No"
           false
@@ -30,10 +29,6 @@ module Recode
           say "!txtgrn!Yes"
           true
         end
-      end
-
-      def prompt
-        @prompt ||= TTY::Prompt.new
       end
 
     end

@@ -1,7 +1,3 @@
-require 'mister_bin'
-require 'recode/handlers'
-require 'recode/runner'
-
 module Recode
   class Command < MisterBin::Command
     help "Code Refactoring Utility"
@@ -16,11 +12,12 @@ module Recode
     param "NEW", "New string, singular and capitalized"
     param "EXTENSIONS", "Space delimited file extensions"
 
-    example "recode refactor"
+    example "recode refactor Member User rb"
+    example "recode refactor Member to User in rb js"
+    example "recode refactor Member to User in rb js --apply"
+    example "recode refactor Member to User in rb js -p"
 
     def run
-      path = "./sample"
-
       runner = Runner.new path: path, 
         extensions: extensions, 
         old_string: old_string, 
@@ -41,6 +38,10 @@ module Recode
       end
     end
 
+    def path
+      "."
+    end
+    
     def extensions
       args['EXTENSIONS']
     end

@@ -1,7 +1,3 @@
-require 'colsole'
-require 'active_support/inflector'
-require 'recode/change_variations'
-
 module Recode
   class Runner
     include Colsole
@@ -56,7 +52,7 @@ module Recode
     end
 
     def files
-      @files ||= Dir["#{path}/**/*.{#{extensions.join ','}}"]
+      @files ||= Dir["#{path}/**/*.{#{extensions.join ','}}"].sort
     end
 
     def refresh_files

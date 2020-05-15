@@ -1,5 +1,3 @@
-require 'recode/handler/output'
-
 module Recode
   module Handler
     class Apply < Output
