@@ -11,7 +11,39 @@
     $ gem install recode
 
 
-
 ## Usage
 
-TODO
+```
+$ recode --help
+Code Refactoring Utility
+
+Usage:
+  recode OLD [to] NEW [in] EXTENSIONS... [options]
+  recode (-h|--help)
+
+Options:
+  -a --apply
+    Apply changes
+
+  -p --prompt
+    Apply changes interactively
+
+  -h --help
+    Show this help
+
+Parameters:
+  OLD
+    Old string, singular and capitalized
+
+  NEW
+    New string, singular and capitalized
+
+  EXTENSIONS
+    Space delimited file extensions
+
+Examples:
+  recode refactor Member User rb
+  recode refactor Member to User in rb js
+  recode refactor Member to User in rb js --apply
+  recode refactor Member to User in rb js -p
+```
