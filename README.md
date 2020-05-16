@@ -6,6 +6,10 @@
 
 ---
 
+![Demo](/demo/cast.svg)
+
+---
+
 ## Installation
 
     $ gem install recode
