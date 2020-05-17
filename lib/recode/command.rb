@@ -12,10 +12,10 @@ module Recode
     param "NEW", "New string, singular and capitalized"
     param "EXTENSIONS", "Space delimited file extensions"
 
-    example "recode refactor Member User rb"
-    example "recode refactor Member to User in rb js"
-    example "recode refactor Member to User in rb js --apply"
-    example "recode refactor Member to User in rb js -p"
+    example "recode Member User rb"
+    example "recode Member to User in rb js"
+    example "recode Member to User in rb js --apply"
+    example "recode Member to User in rb js -p"
 
     def run
       runner = Runner.new path: path, 
