@@ -46,8 +46,8 @@ Parameters:
     Space delimited file extensions
 
 Examples:
-  recode refactor Member User rb
-  recode refactor Member to User in rb js
-  recode refactor Member to User in rb js --apply
-  recode refactor Member to User in rb js -p
+  recode Member User rb
+  recode Member to User in rb js
+  recode Member to User in rb js --apply
+  recode Member to User in rb js -p
 ```
