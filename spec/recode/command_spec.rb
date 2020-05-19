@@ -5,13 +5,13 @@ describe Command do
 
   context "without arguments" do
     it "shows short usage" do
-      expect { subject.run %w[] }.to output_fixture('cli/usage')
+      expect { subject.run %w[] }.to output_approval('cli/usage')
     end
   end
 
   context "with --help" do
     it "shows long usage" do
-      expect { subject.run %w[--help] }.to output_fixture('cli/help')
+      expect { subject.run %w[--help] }.to output_approval('cli/help')
     end
   end
 
@@ -19,7 +19,7 @@ describe Command do
     it "shows refactor changes" do
       in_sample_dir do
         expect { subject.run %w[Person to User in rb yml] }
-          .to output_fixture('cli/refactor/person-user')
+          .to output_approval('cli/refactor/person-user')
       end
     end
 
@@ -27,7 +27,7 @@ describe Command do
       it "applies the refactor changes" do
         in_sample_dir do
           expect { subject.run %w[Person to User in rb yml --apply] }
-            .to output_fixture('cli/refactor/person-user-apply')
+            .to output_approval('cli/refactor/person-user-apply')
         end
       end
     end
@@ -38,7 +38,7 @@ describe Command do
 
         in_sample_dir do
           expect { subject.run %w[Person to User in rb yml --prompt] }
-            .to output_fixture('cli/refactor/person-user-prompt')
+            .to output_approval('cli/refactor/person-user-prompt')
         end
       end
 
@@ -48,7 +48,7 @@ describe Command do
 
           in_sample_dir do
             expect { subject.run %w[Person to User in rb yml --prompt] }
-              .to output_fixture('cli/refactor/person-user-prompt-no')
+              .to output_approval('cli/refactor/person-user-prompt-no')
           end
         end        
       end
@@ -60,7 +60,7 @@ describe Command do
           in_sample_dir do
             expect do
               expect { subject.run %w[Person to User in rb yml --prompt] }
-                .to output_fixture('cli/refactor/person-user-prompt-quit')
+                .to output_approval('cli/refactor/person-user-prompt-quit')
             end.to raise_error(Recode::Abort)
           end
         end        

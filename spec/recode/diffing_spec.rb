@@ -7,7 +7,7 @@ describe Diffing do
     let(:after) { "parked cars\nwill be fined"}
 
     it "returns diff specs" do
-      expect(subject.diff(before, after).to_s).to match_fixture('diff/output')
+      expect(subject.diff(before, after).to_s).to match_approval('diff/output')
     end
   end
 end
