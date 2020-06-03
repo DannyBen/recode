@@ -16,5 +16,12 @@ describe ChangeVariations do
         ["feet", "meters"], ["foot", "meter"]
       ]
     end
+
+    it "peroperly converts CamelCase to snake_case" do
+      expect(subject.change_variations "TableSpoon", "MapleSyrup").to eq [
+        ["table_spoons", "maple_syrups"], ["TableSpoons", "MapleSyrups"],
+        ["table_spoon", "maple_syrup"], ["TableSpoon", "MapleSyrup"]
+      ]
+    end
   end
 end
