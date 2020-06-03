@@ -3,6 +3,7 @@ require 'colsole'
 require 'strings-inflection'
 require 'strings/inflection/extensions'
 
+require 'recode/refinements'
 require 'recode/exceptions'
 require 'recode/diffing'
 require 'recode/handler/base'
