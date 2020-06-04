@@ -23,5 +23,12 @@ describe ChangeVariations do
         ["table_spoon", "maple_syrup"], ["TableSpoon", "MapleSyrup"]
       ]
     end
+
+    it "peroperly converts irregular CamelCase to snake_case" do
+      expect(subject.change_variations "TinyPerson", "HappyPerson").to eq [
+        ["tiny_people", "happy_people"], ["TinyPeople", "HappyPeople"],
+        ["tiny_person", "happy_person"], ["TinyPerson", "HappyPerson"]
+      ]
+    end
   end
 end
