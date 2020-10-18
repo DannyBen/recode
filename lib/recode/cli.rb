@@ -5,9 +5,7 @@ require 'recode/command'
 module Recode
   class CLI
     def self.router
-      router = MisterBin::Runner.new version: VERSION
-      router.route_all to: Command
-      router
+      MisterBin::Runner.new version: VERSION, handler: Command
     end
   end
 end
