@@ -16,17 +16,17 @@ module Recode
     private
 
       def apply?
-        say "\nApply? !undgrn!Y!txtrst!es, !undgrn!n!txtrst!o, !undgrn!q!txtrst!uit : "
+        say "\nApply? gu`Y`es, gu`n`o, gu`q`uit : "
         answer = $stdin.getch.downcase
         
         if answer == 'q' or answer == "\u0003"
-          say "!txtblu!Quit"
+          say "b`Quit`"
           raise Recode::Abort
         elsif answer == 'n'
-          say "!txtred!No"
+          say "r`No`"
           false
         else
-          say "!txtgrn!Yes"
+          say "g`Yes`"
           true
         end
       end

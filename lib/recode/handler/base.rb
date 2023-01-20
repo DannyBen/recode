@@ -5,14 +5,14 @@ module Recode
       include Colsole
 
       def show_rename(source:, target:)
-        say "\n!txtpur!" + ("_" * terminal_width)
-        say "!txtpur!rename:"
+        say "\nm`" + ("_" * terminal_width) + '`'
+        say "m`rename:`"
         puts diff source, target
       end
 
       def show_edit(file:, before:, after:)
-        say "\n!txtblu!" + ("_" * terminal_width)
-        say "!txtblu!edit: #{file}"
+        say "\nb`" + ("_" * terminal_width) + '`'
+        say "b`edit: #{file}`"
         puts diff before, after
       end
 
