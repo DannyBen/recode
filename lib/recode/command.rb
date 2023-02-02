@@ -1,26 +1,26 @@
 module Recode
   class Command < MisterBin::Command
-    help "Code Refactoring Utility"
+    help 'Code Refactoring Utility'
 
-    usage "recode OLD [to] NEW [in] EXTENSIONS... [options]"
-    usage "recode (-h|--help)"
+    usage 'recode OLD [to] NEW [in] EXTENSIONS... [options]'
+    usage 'recode (-h|--help)'
 
-    option "-a --apply", "Apply changes"
-    option "-p --prompt", "Apply changes interactively "
+    option '-a --apply', 'Apply changes'
+    option '-p --prompt', 'Apply changes interactively '
 
-    param "OLD", "Old string, singular and capitalized"
-    param "NEW", "New string, singular and capitalized"
-    param "EXTENSIONS", "Space delimited file extensions"
+    param 'OLD', 'Old string, singular and capitalized'
+    param 'NEW', 'New string, singular and capitalized'
+    param 'EXTENSIONS', 'Space delimited file extensions'
 
-    example "recode Member User rb"
-    example "recode Member to User in rb js"
-    example "recode Member to User in rb js --apply"
-    example "recode Member to User in rb js -p"
+    example 'recode Member User rb'
+    example 'recode Member to User in rb js'
+    example 'recode Member to User in rb js --apply'
+    example 'recode Member to User in rb js -p'
 
     def run
-      runner = Runner.new path: path, 
-        extensions: extensions, 
-        old_string: old_string, 
+      runner = Runner.new path: path,
+        extensions: extensions,
+        old_string: old_string,
         new_string: new_string
 
       runner.execute handler
@@ -39,9 +39,9 @@ module Recode
     end
 
     def path
-      "."
+      '.'
     end
-    
+
     def extensions
       args['EXTENSIONS']
     end
@@ -53,7 +53,5 @@ module Recode
     def new_string
       args['NEW']
     end
-
-
   end
 end

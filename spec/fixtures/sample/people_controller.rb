@@ -1,8 +1,7 @@
 class PeopleController
   def people
-    "we are the people to rule the world"
+    'we are the people to rule the world'
   end
 
-  def person
-  end
+  def person; end
 end

@@ -11,3 +11,4 @@ AllCops:
   TargetRubyVersion: 2.7
   Exclude:
     - dev/**/*
+    - sample/**/*

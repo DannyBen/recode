@@ -5,13 +5,13 @@ module Recode
       include Colsole
 
       def show_rename(source:, target:)
-        say "\nm`" + ("_" * terminal_width) + '`'
-        say "m`rename:`"
+        say "\nm`#{'_' * terminal_width}`"
+        say 'm`rename:`'
         puts diff source, target
       end
 
       def show_edit(file:, before:, after:)
-        say "\nb`" + ("_" * terminal_width) + '`'
+        say "\nb`#{'_' * terminal_width}`"
         say "b`edit: #{file}`"
         puts diff before, after
       end

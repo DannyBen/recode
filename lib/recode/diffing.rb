@@ -15,5 +15,4 @@ module Recode
       Diffy::Diff
     end
   end
-
 end

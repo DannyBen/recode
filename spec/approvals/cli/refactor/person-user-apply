@@ -20,12 +20,12 @@ ________________________________________________________________________________
 edit: ./users_controller.rb
 -class PeopleController
 -  def people
--    "we are the people to rule the world"
+-    'we are the people to rule the world'
 +class UsersController
 +  def users
-+    "we are the users to rule the world"
++    'we are the users to rule the world'
    end
  
--  def person
-+  def user
-   end
+-  def person; end
++  def user; end
+ end

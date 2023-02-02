@@ -6,4 +6,5 @@ summary "Runfile tasks for building the Recode gem"
 version Recode::VERSION
 
 import_gem 'runfile-tasks/gem', gemname: 'recode'
+import 'dev/debug'
 
