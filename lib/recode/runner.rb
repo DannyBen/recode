@@ -3,12 +3,13 @@ module Recode
     include Colsole
     include ChangeVariations
 
-    attr_accessor :path, :extensions, :old_string, :new_string
-    attr_accessor :handler
+    attr_accessor :path, :extensions, :old_string, :new_string, :handler
 
     def initialize(path: nil, extensions: nil, old_string: nil, new_string: nil)
-      @path, @extensions = path, extensions
-      @old_string, @new_string = old_string, new_string
+      @path = path
+      @extensions = extensions
+      @old_string = old_string
+      @new_string = new_string
     end
 
     def execute(handler)
@@ -31,14 +32,14 @@ module Recode
     def refactor_filename(file)
       target = apply_changes file
       payload = { source: file, target: target }
-      handler.rename **payload unless target == file
+      handler.rename(**payload) unless target == file
     end
 
     def refactor_content(file)
       before = File.read file
       after = apply_changes before
       payload = { file: file, before: before, after: after }
-      handler.edit **payload unless before == after
+      handler.edit(**payload) unless before == after
     end
 
     def apply_changes(string)

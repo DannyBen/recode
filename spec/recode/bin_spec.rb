@@ -3,8 +3,8 @@ require 'spec_helper'
 describe 'bin/recode' do
   subject { CLI.router }
 
-  it "shows usage patterns" do
-    expect{ subject.run }.to output_approval('cli/usage')
+  it 'shows usage patterns' do
+    expect { subject.run }.to output_approval('cli/usage')
   end
 
   # context "on exception" do

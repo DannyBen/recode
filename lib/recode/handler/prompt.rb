@@ -12,25 +12,24 @@ module Recode
         super
         save_file file, after if apply?
       end
-    
+
     private
 
       def apply?
         say "\nApply? gu`Y`es, gu`n`o, gu`q`uit : "
-        answer = $stdin.getch.downcase
-        
-        if answer == 'q' or answer == "\u0003"
-          say "b`Quit`"
+
+        case $stdin.getch.downcase
+        when 'q', "\u0003"
+          say 'b`Quit`'
           raise Recode::Abort
-        elsif answer == 'n'
-          say "r`No`"
+        when 'n'
+          say 'r`No`'
           false
         else
-          say "g`Yes`"
+          say 'g`Yes`'
           true
         end
       end
-
     end
   end
 end
