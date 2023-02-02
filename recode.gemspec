@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = ">= 2.7.0"
 
-  s.add_runtime_dependency 'colsole', '~> 0.8', '>= 0.8.1'
+  s.add_runtime_dependency 'colsole', '>= 0.8.1', '< 2'
   s.add_runtime_dependency 'diffy', '~> 3.3'
   s.add_runtime_dependency 'mister_bin', '~> 0.7'
   s.add_runtime_dependency 'strings-inflection', '~> 0.1'

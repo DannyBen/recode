@@ -1,17 +1,9 @@
-require "runfile-tasks"
 require "byebug"
-require_relative 'lib/recode'
+require 'recode'
 
 title   "Recode Developer Toolbelt"
 summary "Runfile tasks for building the Recode gem"
 version Recode::VERSION
 
-RunfileTasks::RubyGems.all 'recode'
-RunfileTasks::Testing.rspec
+import_gem 'runfile-tasks/gem', gemname: 'recode'
 
-help   "Run interactive console"
-action :console, :c do
-  system "bundle exec bin/console"
-end
-
-require_relative 'debug.rb' if File.exist? 'debug.rb'

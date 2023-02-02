@@ -1,6 +1,7 @@
 require 'mister_bin'
 require 'recode'
 require 'recode/command'
+require 'recode/version'
 
 module Recode
   class CLI
