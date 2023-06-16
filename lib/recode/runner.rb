@@ -53,7 +53,7 @@ module Recode
     end
 
     def files
-      @files ||= Dir["#{path}/**/*.{#{extensions.join ','}}"].sort
+      @files ||= Dir["#{path}/**/*.{#{extensions.join ','}}"]
     end
 
     def refresh_files

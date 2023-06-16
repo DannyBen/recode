@@ -20,7 +20,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'diffy', '~> 3.3'
   s.add_runtime_dependency 'mister_bin', '~> 0.7'
   s.add_runtime_dependency 'strings-inflection', '~> 0.1'
-  
+
   s.metadata = {
     'bug_tracker_uri'       => 'https://github.com/DannyBen/recode/issues',
     'changelog_uri'         => 'https://github.com/DannyBen/recode/blob/master/CHANGELOG.md',
