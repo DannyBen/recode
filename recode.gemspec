@@ -14,11 +14,17 @@ Gem::Specification.new do |s|
   s.homepage    = 'https://github.com/dannyben/recode'
   s.license     = 'MIT'
 
-  s.required_ruby_version = '>= 2.7.0'
+  s.required_ruby_version = '>= 3.0'
 
   s.add_runtime_dependency 'colsole', '>= 0.8.1', '< 2'
   s.add_runtime_dependency 'diffy', '~> 3.3'
   s.add_runtime_dependency 'mister_bin', '~> 0.7'
   s.add_runtime_dependency 'strings-inflection', '~> 0.1'
-  s.metadata['rubygems_mfa_required'] = 'true'
+  
+  s.metadata = {
+    'bug_tracker_uri'       => 'https://github.com/DannyBen/recode/issues',
+    'changelog_uri'         => 'https://github.com/DannyBen/recode/blob/master/CHANGELOG.md',
+    'source_code_uri'       => 'https://github.com/DannyBen/recode',
+    'rubygems_mfa_required' => 'true',
+  }
 end
