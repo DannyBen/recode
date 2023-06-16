@@ -33,22 +33,13 @@ describe Command do
     end
 
     context 'with --prompt' do
-      it 'applies the refactor changes' do
-        allow($stdin).to receive(:getch).and_return('y')
-
-        in_sample_dir do
-          expect { subject.run %w[Person to User in rb yml --prompt] }
-            .to output_approval('cli/refactor/person-user-prompt')
-        end
-      end
-
-      context 'when answering no' do
-        it 'does not apply the changes' do
-          allow($stdin).to receive(:getch).and_return 'n'
+      context 'when answering yes' do
+        it 'applies the refactor changes' do
+          allow($stdin).to receive(:getch).and_return('y')
 
           in_sample_dir do
             expect { subject.run %w[Person to User in rb yml --prompt] }
-              .to output_approval('cli/refactor/person-user-prompt-no')
+              .to output_approval('cli/refactor/person-user-prompt')
           end
         end
       end
@@ -62,6 +53,17 @@ describe Command do
               expect { subject.run %w[Person to User in rb yml --prompt] }
                 .to output_approval('cli/refactor/person-user-prompt-quit')
             end.to raise_error(Recode::Abort)
+          end
+        end
+      end
+
+      context 'when answering anything but quit or yes' do
+        it 'does not apply the changes' do
+          allow($stdin).to receive(:getch).and_return 'k'
+
+          in_sample_dir do
+            expect { subject.run %w[Person to User in rb yml --prompt] }
+              .to output_approval('cli/refactor/person-user-prompt-no')
           end
         end
       end

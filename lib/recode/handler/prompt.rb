@@ -22,12 +22,12 @@ module Recode
         when 'q', "\u0003"
           say 'b`Quit`'
           raise Recode::Abort
-        when 'n'
-          say 'r`No`'
-          false
-        else
+        when 'y'
           say 'g`Yes`'
           true
+        else
+          say 'r`No`'
+          false
         end
       end
     end
