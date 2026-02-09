@@ -1,5 +1,7 @@
 # Recode - Command line refactoring utility
 
+![repocard](https://repocard.dannyben.com/svg/recode.svg)
+
 ![Demo](/demo/cast.svg)
 
 ---
